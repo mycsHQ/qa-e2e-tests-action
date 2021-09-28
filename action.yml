@@ -1,0 +1,14 @@
+name: 'qa-e2e'
+description: 'Run mycs qa e2e tests'
+inputs:
+  suite:
+    description: 'test suite to run'
+    required: true
+    default: 'smoke'
+runs:
+  using: "composite"
+  env:
+    RUN_SUITES: ${{ inputs.suite }}
+  steps:
+    - run: ${{ github.action_path }}/runQA.sh
+      shell: bash
