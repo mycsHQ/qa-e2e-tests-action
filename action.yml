@@ -5,10 +5,18 @@ inputs:
     description: 'test suite to run'
     required: true
     default: 'smoke'
+  branch:
+    description: 'branch to run the e2e test on'
+    required: true
+  token:
+    description: circleci token
+    required: true
 runs:
   using: "composite"
   env:
     RUN_SUITES: ${{ inputs.suite }}
+    CIRCLE_BRANCH: ${{ inputs.branch }}
+    QA_TOKEN: ${{ qa_token }}
   steps:
     - run: ${{ github.action_path }}/runQA.sh
       shell: bash

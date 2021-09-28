@@ -1,9 +1,4 @@
 #!/bin/bash
-
-if [[ $(git log --format=%B -n 1 HEAD | fgrep '[skip tests]') ]]; then
-  echo "Error -  no test specified" && exit 1;
-fi
-
 echo ${RUN_SUITES}
 if [ -z "$RUN_SUITES" ]; then
   exit 0
