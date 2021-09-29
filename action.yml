@@ -19,4 +19,4 @@ runs:
       env:
         RUN_SUITES: ${{ inputs.suite }}
         CIRCLE_BRANCH: ${{ inputs.branch }}
-        QA_TOKEN: ${{ qa_token }}
+        QA_TOKEN: ${{ inputs.token }}
