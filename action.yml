@@ -4,7 +4,6 @@ inputs:
   suite:
     description: 'test suite to run'
     required: true
-    default: 'smoke'
   branch:
     description: 'branch to run the e2e test on'
     required: true
