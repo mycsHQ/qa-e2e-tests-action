@@ -13,10 +13,10 @@ inputs:
     required: true
 runs:
   using: "composite"
-  env:
-    RUN_SUITES: ${{ inputs.suite }}
-    CIRCLE_BRANCH: ${{ inputs.branch }}
-    QA_TOKEN: ${{ qa_token }}
   steps:
     - run: ${{ github.action_path }}/runQA.sh
       shell: bash
+      env:
+        RUN_SUITES: ${{ inputs.suite }}
+        CIRCLE_BRANCH: ${{ inputs.branch }}
+        QA_TOKEN: ${{ qa_token }}
